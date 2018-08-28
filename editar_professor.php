@@ -1,5 +1,6 @@
 <?php
   $titulo = "School Life";
+  include 'database/selectupdate_professor.php';
  ?>
 
 <!doctype html>
@@ -7,7 +8,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?= $titulo  ?> - Página Inicial</title>
+    <title><?= $titulo  ?> - Listar Professor</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   </head>
 
@@ -20,8 +21,8 @@
 
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Início <span class="sr-only">(atual)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Início</a>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastrar</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -49,18 +50,29 @@
       <div class="jumbotron">
         <div class="container">
           <br>
-          <h1 class="display-3">Bem-vindo ao School Life!</h1>
-          <p>Esta é a versão web do gerenciador de atividades com o mesmo nome.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Acessar &raquo;</a></p>
+          <h1 class="display-3">Editar Professor</h1>
         </div>
       </div>
 
       <div class="container">
         <div class="row">
           <div class="col-md">
-            <h2>Simples e fácil</h2>
-            <p>A versão web do School Life é ainda mais simples e completa que o antigo software. Ela mantém as funções originais com melhorias e adiciona novas para ajudar com seus estudos!</p>
-          </div>
+            <form class="" action="database/update_professor.php" method="post">
+              <div class="form-group">
+                	<input type="text" class="form-control" name="id" placeholder="Código do Professor" value="<?= $id ?>" disabled>
+               </div>
+              <div class="form-group">
+                	<label for="nome" class="texto">Nome</label>
+                	<input type="text" class="form-control" name="nome" placeholder="Digite o nome do Professor" value="<?= $nome ?>">
+               </div>
+               <div class="form-group">
+                 <label for="email" class="texto">Email</label>
+                 <input type="text" name="email" class="form-control" placeholder="Digite o email do Professor" value="<?= $email ?>">
+               </div>
+               <div class="form-group">
+                 <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+               </div>
+            </form>
         </div>
         <hr>
       </div>
