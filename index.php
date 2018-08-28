@@ -13,7 +13,7 @@
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#"><?= $titulo  ?></a>
+      <a class="navbar-brand" href="index.php"><?= $titulo  ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -21,11 +21,11 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Início <span class="sr-only">(atual)</span></a>
+            <a class="nav-link" href="index.php">Início <span class="sr-only">(atual)</span></a>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastrar</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Professor</a>
+              <a class="dropdown-item" href="cadastrar_professor.php">Professor</a>
               <a class="dropdown-item" href="#">Matéria</a>
               <a class="dropdown-item" href="#">Tipo de Atividade</a>
               <a class="dropdown-item" href="#">Atividade</a>

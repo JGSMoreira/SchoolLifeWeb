@@ -10,7 +10,7 @@ if(empty($id)){
 }
 else{
   $SQL = "UPDATE professor SET nome = :nome, email = :email where idProfessor = ".$id;
-  $ALTERAR = $CONNECTION->prepare($SQL);
+  $ALTERAR = $conn->prepare($SQL);
   $ALTERAR->bindParam(':nome', $nome);
   $ALTERAR->bindParam(':email', $email);
 
