@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?= $titulo  ?> - Página Inicial</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
   </head>
 
   <body>
@@ -46,12 +47,12 @@
 
     <main role="main">
 
-      <div class="jumbotron">
+      <div class="jumbotron jumbotron-fluid" id="elefantebot">
         <div class="container">
           <br>
           <h1 class="display-3">Bem-vindo ao School Life!</h1>
           <p>Esta é a versão web do gerenciador de atividades com o mesmo nome.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Acessar &raquo;</a></p>
+          <p><a class="btn btn-light btn-lg" href="#" role="button">Ver atividades</a></p>
         </div>
       </div>
 

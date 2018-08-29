@@ -7,8 +7,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?= $titulo  ?> - Listar Professor</title>
+    <title><?= $titulo  ?> - Listar Professores</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
   </head>
 
   <body>
@@ -46,7 +47,7 @@
 
     <main role="main">
 
-      <div class="jumbotron">
+      <div class="jumbotron jumbotron-fluid" id="elefantebot">
         <div class="container">
           <br>
           <h1 class="display-3">Professores</h1>
@@ -59,7 +60,7 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th>ID</th>
+                  <th>Cod.</th>
                   <th>Nome</th>
                   <th>Email</th>
                   <th>Opções</th>
@@ -69,6 +70,10 @@
                 <?php include 'database/select_professor.php' ?>
               </tbody>
             </table>
+            <div class="form-group">
+              <a href="cadastrar_professor.php"><button type="button" class="btn btn-primary">Cadastrar novo professor</button></a>
+              <button type="button" class="btn btn-danger" onclick="voltar()">Voltar</button>
+            </div>
         </div>
         <hr>
       </div>
@@ -81,5 +86,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>function voltar() {window.history.back();}</script>
   </body>
 </html>
