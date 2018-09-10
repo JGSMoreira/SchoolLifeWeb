@@ -12,6 +12,6 @@ else{
   $ALTERAR->bindParam(':id', $id);
 
   $RESULT = $ALTERAR->execute();
-  header('location:../listar_professor.php');
+  header('location:../sistema/listar_professor.php');
 }
 ?>

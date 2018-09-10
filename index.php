@@ -18,29 +18,9 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.php">Início <span class="sr-only">(atual)</span></a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastrar</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="cadastrar_professor.php">Professor</a>
-              <a class="dropdown-item" href="#">Matéria</a>
-              <a class="dropdown-item" href="#">Tipo de Atividade</a>
-              <a class="dropdown-item" href="#">Atividade</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listar</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="listar_professor.php">Professor</a>
-              <a class="dropdown-item" href="#">Matéria</a>
-              <a class="dropdown-item" href="#">Tipo de Atividade</a>
-              <a class="dropdown-item" href="#">Atividade</a>
-            </div>
-          </li>
         </ul>
       </div>
     </nav>
@@ -52,7 +32,7 @@
           <br>
           <h1 class="display-3">Bem-vindo ao School Life!</h1>
           <p>Esta é a versão web do gerenciador de atividades com o mesmo nome.</p>
-          <p><a class="btn btn-light btn-lg" href="#" role="button">Ver atividades</a></p>
+          <p><a class="btn btn-light btn-lg" href="logar.php" role="button">Fazer login</a></p>
         </div>
       </div>
 
