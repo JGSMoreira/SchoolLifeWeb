@@ -72,6 +72,9 @@
            <div class="col-md">
              <form class="" action="../../database/atividade/update.php" method="post">
                <div class="form-group">
+                 <input type="text" class="form-control" name="id" value="<?= $_GET['id'] ?>" readonly>
+               </div>
+               <div class="form-group">
                  <div class="row">
                    <div class="col">
                      <label for="nome">Nome</label>
@@ -165,7 +168,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-primary">Cadastrar</button>
+                  <button type="submit" class="btn btn-primary">Salvar</button>
                   <button type="button" class="btn btn-danger" onclick="voltar()">Cancelar</button>
                 </div>
              </form>
@@ -175,7 +178,7 @@
      </main>
 
      <footer class="container">
-       <p>School Life | Continuação do projeto de 2017.</p>
+       <p>School Life | 2018</p>
      </footer>
 
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

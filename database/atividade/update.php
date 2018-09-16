@@ -31,13 +31,13 @@ else{
   $tipo = $ROWS->idTipo_Atividade;
 
   $RESULT = $conn->prepare('SELECT idMateria FROM materia WHERE nome = :nome AND idUserFK = :iduser');
-  $RESULT->bindParam(':nome', $tipo);
+  $RESULT->bindParam(':nome', $materia);
   $RESULT->bindParam(':iduser', $_SESSION['iduser']);
   $RESULT->execute();
   $ROWS = $RESULT->fetch(PDO::FETCH_OBJ);
   $materia = $ROWS->idMateria;
 
-  $SQL = "UPDATE atividade SET nome = :nome, data_entrega = :data, prioridade = :prioridade, pontuacao = :valor, situacao = :situacao, idTipo_AtividadeFK = :tipo, idMateriaFK = :materia  WHERE idAtividade = ".$id;
+  $SQL = 'UPDATE atividade SET nome = :nome, data_entrega = :data, prioridade = :prioridade, pontuacao = :valor, situacao = :situacao, idTipo_AtividadeFK = :tipo, idMateriaFK = :materia  WHERE idAtividade = '.$id;
   $ALTERAR = $conn->prepare($SQL);
   $ALTERAR->bindParam(':nome', $nome);
   $ALTERAR->bindParam(':data', $data);
