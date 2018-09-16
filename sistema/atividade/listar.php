@@ -9,6 +9,9 @@
     $logado = true;
     $mensagem = 'Bem-vindo, '.$_SESSION['nome'].'.';
   }
+  else{
+    header('location:/logar.php?erro=Você precisa estar logado para acessar esta tela!');
+  }
  ?>
 
 <!doctype html>
@@ -23,7 +26,7 @@
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="index.php"><?= $titulo  ?></a>
+      <a class="navbar-brand" href="../painel.php"><?= $titulo  ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

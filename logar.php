@@ -18,8 +18,11 @@
       <label for="senha" class="sr-only">Senha</label>
       <input type="password" name="senha" class="form-control" placeholder="Senha" required>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Logar</button>
-      <a href="cadastrar.php">Cadastre-se</a>
-      <br>
+
+      <div class="">
+        <a href="cadastrar.php">Cadastre-se</a>
+      </div>
+
       <?php
         if (isset($_GET['erro'])){
           echo '<div class="alert alert-danger" role="alert">';

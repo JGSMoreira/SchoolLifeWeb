@@ -7,6 +7,9 @@ if (isset($_SESSION['logado']) && $_SESSION['logado']){
   $logado = true;
   $mensagem = 'Bem-vindo, '.$_SESSION['nome'].'.';
 }
+else{
+  header('location:/logar.php?erro=Você precisa estar logado para acessar esta tela!');
+}
  ?>
 
  <!doctype html>
