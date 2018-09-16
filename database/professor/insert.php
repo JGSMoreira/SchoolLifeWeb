@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include '../connection.php';
 session_start();
 //Variáveis recebidas
 $nome = $_POST['nome'];
@@ -25,7 +25,7 @@ else{
   }
   else{
     echo '<div class="alert alert-primary" role="alert">Pessoa salva com sucesso!</div>';
-    header('location: ../sistema/listar_professor.php');
+    header('location: ../../sistema/professor/listar.php');
   }
 }
 

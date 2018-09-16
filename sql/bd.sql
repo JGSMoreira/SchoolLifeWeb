@@ -30,25 +30,25 @@ create table if not exists materia(
 
 create table if not exists tipo_atividade(
   idtipo_atividade int auto_increment primary key,
-  nome varchar (60) not null unique
+  nome varchar (60) not null,
+
+  idUserFK int not null,
+  foreign key (idUserFK) references usuario(idUsuario)
 );
 
 create table if not exists atividade(
   idAtividade  int auto_increment primary key,
   data_entrega date not null,
   nome varchar (120) not null,
-  etapa varchar (1) not null,
-  prioridade varchar (5) not null,
+  prioridade varchar (30) not null,
   pontuacao int not null,
   situacao varchar(30) not null,
 
   idTipo_AtividadeFK int not null,
   idMateriaFK int not null,
-  idProfessorFK int not null,
   idUserFK int not null,
   foreign key (idTipo_AtividadeFK) references tipo_atividade(idtipo_atividade),
   foreign key (idMateriaFK) references materia(idMateria),
-  foreign key (idProfessorFK) references professor(idProfessor),
   foreign key (idUserFK) references usuario(idUsuario)
 );
 

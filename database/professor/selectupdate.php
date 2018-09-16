@@ -1,9 +1,9 @@
 <?php
 $id = $_GET['id'];
-include 'connection.php';
+include (dirname(__FILE__).'\..\connection.php');
 
 if(empty($id)){
-  header('location:listar_professor.php');
+  header('location:../professor/listar.php');
 }
 else{
   $SQL = "SELECT nome, email FROM professor where idProfessor = ".$id;

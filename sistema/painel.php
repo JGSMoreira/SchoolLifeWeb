@@ -21,7 +21,7 @@ if (isset($_SESSION['logado']) && $_SESSION['logado']){
 
    <body>
      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-       <a class="navbar-brand" href="index.php">School Life</a>
+       <a class="navbar-brand" href="painel.php">School Life</a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
@@ -29,27 +29,24 @@ if (isset($_SESSION['logado']) && $_SESSION['logado']){
        <div class="collapse navbar-collapse">
          <ul class="navbar-nav mr-auto">
            <li class="nav-item">
-             <a class="nav-link" href="../index.php">Início</a>
-           </li>
-           <li class="nav-item">
-             <a class="nav-link current" href="admin.php">Painel</a>
+             <a class="nav-link current" href="painel.php">Painel</a>
            </li>
            <li class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastrar</a>
              <div class="dropdown-menu" aria-labelledby="dropdown01">
-               <a class="dropdown-item" href="cadastrar_professor.php">Professor</a>
-               <a class="dropdown-item" href="#">Matéria</a>
-               <a class="dropdown-item" href="#">Tipo de Atividade</a>
-               <a class="dropdown-item" href="#">Atividade</a>
+               <a class="dropdown-item" href="professor/cadastrar.php">Professor</a>
+               <a class="dropdown-item" href="materia/cadastrar.php">Matéria</a>
+               <a class="dropdown-item" href="tipo_atividade/cadastrar.php">Tipo de Atividade</a>
+               <a class="dropdown-item" href="atividade/cadastrar.php">Atividade</a>
              </div>
            </li>
            <li class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listar</a>
              <div class="dropdown-menu" aria-labelledby="dropdown01">
-               <a class="dropdown-item" href="listar_professor.php">Professor</a>
-               <a class="dropdown-item" href="#">Matéria</a>
-               <a class="dropdown-item" href="#">Tipo de Atividade</a>
-               <a class="dropdown-item" href="#">Atividade</a>
+               <a class="dropdown-item" href="professor/listar.php">Professor</a>
+               <a class="dropdown-item" href="materia/listar.php">Matéria</a>
+               <a class="dropdown-item" href="tipo_atividade/listar.php">Tipo de Atividade</a>
+               <a class="dropdown-item" href="atividade/listar.php">Atividade</a>
              </div>
            </li>
            <li class="nav-item">
@@ -72,7 +69,7 @@ if (isset($_SESSION['logado']) && $_SESSION['logado']){
      </main>
 
      <footer class="container">
-       <p>School Life | Continuação do projeto de 2017.</p>
+       <p>School Life | 2018.</p>
      </footer>
 
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

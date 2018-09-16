@@ -16,7 +16,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?= $titulo  ?> - Cadastrar Professor</title>
+    <title><?= $titulo  ?> - Cadastrar Matéria</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/base.css">
   </head>
@@ -31,24 +31,28 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../index.php">Início</a>
+            <a class="nav-link" href="../painel.php">Painel</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastrar</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="cadastrar_professor.php">Professor</a>
-              <a class="dropdown-item" href="#">Matéria</a>
-              <a class="dropdown-item" href="#">Tipo de Atividade</a>
-              <a class="dropdown-item" href="#">Atividade</a>
+              <a class="dropdown-item" href="../professor/cadastrar.php">Professor</a>
+              <a class="dropdown-item" href="cadastrar.php">Matéria</a>
+              <a class="dropdown-item" href="../tipo_atividade/cadastrar.php">Tipo de Atividade</a>
+              <a class="dropdown-item" href="../atividade/cadastrar.php">Atividade</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listar</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="listar_professor.php">Professor</a>
-              <a class="dropdown-item" href="#">Matéria</a>
-              <a class="dropdown-item" href="#">Tipo de Atividade</a>
-              <a class="dropdown-item" href="#">Atividade</a>
+              <a class="dropdown-item" href="../professor/listar.php">Professor</a>
+              <a class="dropdown-item" href="listar.php">Matéria</a>
+              <a class="dropdown-item" href="../tipo_atividade/listar.php">Tipo de Atividade</a>
+              <a class="dropdown-item" href="../atividade/listar.php">Atividade</a>
             </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../logout.php">Sair</a>
           </li>
         </ul>
       </div>
@@ -57,7 +61,7 @@
       <div class="jumbotron jumbotron-fluid" id="elefantebot">
         <div class="container">
           <br>
-          <h1 class="display-3">Cadastrar Professor</h1>
+          <h1 class="display-3">Cadastrar Matéria</h1>
         </div>
       </div>
 
@@ -66,14 +70,23 @@
       <div class="container">
         <div class="row">
           <div class="col-md">
-            <form class="" action="../database/insert_professor.php" method="post">
+            <form class="" action="../../database/materia/insert.php" method="post">
               <div class="form-group">
                 	<label for="nome" class="texto">Nome</label>
-                	<input type="text" class="form-control" name="nome" value="" placeholder="Digite o nome do Professor">
+                	<input type="text" class="form-control" name="nome" value="" placeholder="Digite o nome da Matéria">
                </div>
                <div class="form-group">
-                 <label for="email" class="texto">Email</label>
-                 <input type="text" name="email" class="form-control" value="" placeholder="Digite o email do Professor">
+                 <label for="professor" class="texto">Professor</label>
+                 <select class="form-control" name="professor">
+                   <?php
+                     if ($logado){
+                       include '../../database/materia/select_cb.php';
+                     }
+                     else{
+                       echo $mensagem;
+                     }
+                   ?>
+                  </select>
                </div>
                <div class="form-group">
                  <button type="submit" class="btn btn-primary">Cadastrar</button>

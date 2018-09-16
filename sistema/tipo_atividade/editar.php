@@ -1,5 +1,6 @@
 <?php
   $titulo = "School Life";
+  include (dirname(__FILE__).'/../../database/tipo_atividade/selectupdate.php');
 
   session_start();
   $logado = false;
@@ -16,14 +17,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?= $titulo  ?> - Listar Professores</title>
+    <title><?= $titulo  ?> - Editar Tipo de Atividade</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/base.css">
   </head>
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="index.php"><?= $titulo  ?></a>
+      <a class="navbar-brand" href="/sistema/painel.php"><?= $titulo  ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,31 +32,28 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../index.php">Início</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link current" href="admin.php">Painel</a>
+            <a class="nav-link" href="/sistema/painel.php">Painel</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastrar</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="../cadastrar_professor.php">Professor</a>
-              <a class="dropdown-item" href="#">Matéria</a>
-              <a class="dropdown-item" href="#">Tipo de Atividade</a>
-              <a class="dropdown-item" href="#">Atividade</a>
+              <a class="dropdown-item" href="../professor/cadastrar.php">Professor</a>
+              <a class="dropdown-item" href="../materia/cadastrar.php">Matéria</a>
+              <a class="dropdown-item" href="../tipo_atividade/cadastrar.php">Tipo de Atividade</a>
+              <a class="dropdown-item" href="../atividade/cadastrar.php">Atividade</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listar</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="../listar_professor.php">Professor</a>
-              <a class="dropdown-item" href="#">Matéria</a>
-              <a class="dropdown-item" href="#">Tipo de Atividade</a>
-              <a class="dropdown-item" href="#">Atividade</a>
+              <a class="dropdown-item" href="../professor/listar.php">Professor</a>
+              <a class="dropdown-item" href="../materia/listar.php">Matéria</a>
+              <a class="dropdown-item" href="../tipo_atividade/listar.php">Tipo de Atividade</a>
+              <a class="dropdown-item" href="../atividade/listar.php">Atividade</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../logout.php">Sair</a>
+            <a class="nav-link" href="../../logout.php">Sair</a>
           </li>
         </ul>
       </div>
@@ -66,43 +64,34 @@
       <div class="jumbotron jumbotron-fluid" id="elefantebot">
         <div class="container">
           <br>
-          <h1 class="display-3">Professores</h1>
+          <h1 class="display-3">Editar Tipo de Atividade</h1>
         </div>
       </div>
 
       <div class="container">
         <div class="row">
           <div class="col-md">
-            <table class="table table-striped table-hover">
-              <thead>
-                <tr>
-                  <th>Nome</th>
-                  <th>Email</th>
-                  <th>Opções</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                  if ($logado){
-                    include '../database/select_professor.php';
-                  }
-                  else{
-                    echo $mensagem;
-                  }
-                ?>
-              </tbody>
-            </table>
-            <div class="form-group">
-              <a href="cadastrar_professor.php"><button type="button" class="btn btn-primary">Cadastrar novo professor</button></a>
-              <button type="button" class="btn btn-danger" onclick="voltar()">Voltar</button>
-            </div>
+            <form class="" action="../../database/tipo_atividade/update.php" method="post">
+              <div class="form-group">
+                	<input type="text" class="form-control" name="id" placeholder="Código do Tipo de Atividade" value="<?= $id ?>" readonly>
+               </div>
+              <div class="form-group">
+                	<label for="nome" class="texto">Nome</label>
+                	<input type="text" class="form-control" name="nome" placeholder="Digite o nome do Professor" value="<?= $nome ?>">
+               </div>
+               <div class="form-group">
+                 <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                 <button type="button" class="btn btn-danger" onclick="voltar()">Cancelar</button>
+
+               </div>
+            </form>
         </div>
         <hr>
       </div>
     </main>
 
     <footer class="container">
-      <p>School Life | 2018.</p>
+      <p>School Life | Continuação do projeto de 2017.</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

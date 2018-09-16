@@ -21,7 +21,7 @@ else{
     $_SESSION['nome'] = $ROWS->nomeUsuario;
     $_SESSION['iduser'] = $ROWS->idUsuario;
 
-    header('location: sistema/admin.php');
+    header('location: sistema/painel.php');
   }
   else{
     header('location: logar.php?erro=Usuário ou senha inválidos!');

@@ -3,10 +3,10 @@ $id = $_POST['id'];
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 
-include 'connection.php';
+include (dirname(__FILE__).'\..\connection.php');
 
 if(empty($id)){
-  header('location:../listar_professor.php');
+  header('location:../../sistema/professor/listar.php');
 }
 else{
   $SQL = "UPDATE professor SET nome = :nome, email = :email where idProfessor = ".$id;
@@ -15,6 +15,6 @@ else{
   $ALTERAR->bindParam(':email', $email);
 
   $RESULT = $ALTERAR->execute();
-  header('location:../listar_professor.php');
+  header('location:../../sistema/professor/listar.php');
 }
 ?>

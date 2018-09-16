@@ -1,10 +1,10 @@
 <?php
 $id = $_GET['id'];
 
-include 'connection.php';
+include '../connection.php';
 
 if(empty($id)){
-  header('location:../listar_professor.php');
+  header('location:../../sistema/professor/listar.php');
 }
 else{
   $SQL = "DELETE FROM professor WHERE idProfessor = :id";
@@ -12,6 +12,6 @@ else{
   $ALTERAR->bindParam(':id', $id);
 
   $RESULT = $ALTERAR->execute();
-  header('location:../sistema/listar_professor.php');
+  header('location:../../sistema/professor/listar.php');
 }
 ?>
